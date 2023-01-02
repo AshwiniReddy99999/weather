@@ -14,13 +14,14 @@ function Left(){
         "Saturday",
     ]
     const {state:{city,current}}=UseWeatherAppContext();
-    console.log(current)
+  
     if(!current){
         return <div>loading....</div>
     }
     const weekdayIndex = dayjs.unix(current.dt).day();
-    console.log(weekdayIndex)
-    console.log(current.dt)
+    let city_name=city.city?city.city:city[0].city;
+    let city_admin_name=city.admin_name?city.admin_name:city[0].admin_name;
+    let country_name=city.country?city.country:city[0].country;
     return(
         <div className='leftcard'>
          <div>
@@ -30,7 +31,7 @@ function Left(){
          {dayjs.unix(current.dt).format("DD MMM YYYY")}
          </div>
          <div className='dateDay'>
-            {city[0].city}-{city[0].admin_name}-{city[0].country}
+            {city_name}-{city_admin_name}-{country_name}
          </div>
          <div>{<img src={`http://openweathermap.org/img/wn/${current.weather[0].icon}@2x.png`}alt="img"></img>}</div>
          <div>

@@ -1,9 +1,9 @@
-import './WeekInfo.css'
+import './MoreInfo.css'
 import { UseWeatherAppContext } from '../../context/context';
 
-function Weekinfo(){
+function MoreInfo(){
     const {state:{city,current}}=UseWeatherAppContext();
-    console.log(current)
+    let city_population=city.population?city.population:city[0].population;
     if(!current){
         return <div>loading....</div>
     }
@@ -11,7 +11,7 @@ function Weekinfo(){
         <div className='weekInfo'>
          <div className='space'>
             <h2>Humidity</h2>
-            <h2>{current.main.humidity}</h2>
+            <h2>{current.main.humidity}%</h2>
       
          </div>
          <div className='space'>
@@ -22,11 +22,11 @@ function Weekinfo(){
          <div className='space'>
             
             <h2>{`Population`}</h2>
-             <h2>{city[0].population}</h2>
+             <h2>{city_population}</h2>
          </div>
           
         </div>
     )
 }
 
-export default Weekinfo;
+export default MoreInfo;

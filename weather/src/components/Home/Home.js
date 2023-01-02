@@ -1,6 +1,6 @@
 
 import Left from "../Left/Left";
-import Weekinfo from "../Weekinfo/WeekInfo";
+import MoreInfo from "../MoreInfo/MoreInfo";
 import ChooseState from "../ChooseState/ChooseState";
 import './Home.css'
 
@@ -13,7 +13,7 @@ function Home(){
             </div>
             <div className="Right">
               <div className="block1"><ChooseState/></div>
-              <div className="block2 week"><Weekinfo/></div>
+              <div className="block2 week"><MoreInfo/></div>
               
             </div>
           </div>
