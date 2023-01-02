@@ -9,7 +9,7 @@ import cities from '../../data.json'
 const ChooseState=(e)=>{
   
     const {state:{city},dispatch}=UseWeatherAppContext();
-    console.log('rohit',UseWeatherAppContext())
+    
     console.log(city)
     const handleSelectState=(e)=>{
         
